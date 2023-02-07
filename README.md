@@ -1,5 +1,5 @@
 # pizza-delivery-website
-Pizza Restaurant and Delivery website
+<h1>Pizza Restaurant and Delivery website</h1>
 
 I love Pizza! This is a mock website for a Pizza restaurant. 
 This time I used modal menus, CSS animations and some JS to apply on scroll animations and resets.
