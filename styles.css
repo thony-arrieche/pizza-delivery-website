@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+
+/* soft normalize */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    scroll-behavior: smooth;
+    font-family: 'Josefin Sans', sans-serif;
+}
+/*FIX ODD CENTERING ANIMATION*/
+#pizza-logo {
+    height: 4.25rem;
+}
+
+#location-finder {
+    font-size: 2rem;
+    color: #fff;
+    margin: 4px;
+}
+
+#location-finder:hover {
+    color: rgb(179, 177, 177);
+}
+
+/* Additional style for the main menu modal*/
+#offcanvasNavbar {
+    border-radius: 1rem;
+    height: 80vh;
+    max-width: 40vw;
+    line-height: 3rem;
+    margin: 0.75rem;
+}
+
+#offcanvasNavbar a, .btn-close {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+#hero-banner {
+    min-height: 100vh;
+    /*    background-color: rgb(247, 233, 158);*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Use "linear-gradient" to add a brigther background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("hero-image/hero-image-4.jpg");
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    /*
+    Credit for photos used
+    1: Foto de Leonardo Luz: https://www.pexels.com/es-es/foto/comida-pizza-mano-sujetando-15126955/
+    2: Foto de David Levinson: https://www.pexels.com/es-es/foto/comida-pizza-restaurante-delicioso-14520442/
+    3: Foto de Pimon Kumsri: https://www.pexels.com/es-es/foto/comida-pizza-delicioso-sabroso-13472737/
+    4: Foto de Evgeniya Davydova: https://www.pexels.com/es-es/foto/comida-pizza-delicioso-sabroso-11710529/
+    5: Foto de David Levinson: https://www.pexels.com/es-es/foto/comida-pizza-restaurante-cocinando-14520444/
+    6: Foto de Cats Coming: https://www.pexels.com/es-es/foto/mariscos-pizza-queso-derretido-365459/
+    */
+}
+
+#hero-text {
+    transform: translate(50px, -50px);
+    color: #fff;
+}
+
+#view-food-menu {
+    transform: translate(5vw, 1vh);
+}
+
+
+.btn-warning {
+    background-color: orange;
+    color: #fff;
+    border: transparent;
+    font-size: 1.3rem;
+}
+
+.btn-warning:hover {
+    background-color: rgb(221, 144, 2);
+}
+
+#pizza-animation-container {
+    height: 80vh;
+    width: fit-content;
+    max-width: 80vw;
+    /*    background-color: rgb(238, 241, 193);*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Animation panel that contains a rotating pizza element*/
+/* the _show-element Class connects to app.js to apply 
+    animation on scroll and resets when unfocused
+    */
+#animation-template, .show-element {
+    box-sizing: content-box;
+    margin: 0 auto;
+    height: 60vh;
+    animation-name: zoomInPizza, rotatingPizza;
+    animation-duration: 2s, 12s;
+    animation-iteration-count: 1, infinite;
+    animation-timing-function: ease-in;
+    /* To add a slight pause after the between animations*/
+    animation-delay: 0, 200ms;
+    /*
+    Rotatin shorthand
+    animation: rotatingPizza 30s ease infinite;
+    ZoomIn shorthand
+    animation: zoomInPizza 3s ease;
+    */
+}
+
+@keyframes rotatingPizza {
+    100% {transform: rotate(180deg);}
+}
+
+@keyframes zoomInPizza {
+    0% {
+        transform: scale(0.1);
+    }
+    /*
+    25% {
+        transform: scale(0.3);
+    }
+    50% {
+        transform: scale(0.5);
+    }
+    75% {
+        transform: scale(0.75);
+    }
+    */
+    100% {
+        transform: scale(1);
+    }
+    
+}
+
+#info-section {
+    height: 90vh;
+    display: flex;
+}
+/* SHOULD STACK VERTICALLY WHEN SCREEN IS SMALL*/
+#maps-section {
+    height: inherit;
+    width: 50vw;
+    background-color: aquamarine;
+}
+
+#reviews-section {
+    height: inherit;
+    width: 50vw;
+    background-color: greenyellow;
+}
+
+#footer {
+    height: 20vh;
+    background-color: lightblue;
+}
+/* To prevent animation stacking with Reducen Motion users  */
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}

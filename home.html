@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="img/pizza-logo.svg" type="image/x-icon">
+        <title>Pizza Time | Tasty pizza on time!</title>
+        <!-- CDN Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css">
+        <script defer src="app.js"></script>
+    </head>
+    <body>
+        <!--NAVBAR CONTAINER -->
+        <main id="container-fluid">
+          
+          <nav class="sticky-top navbar bg-danger">
+            <div id="nav-list-wrapper" class="container-fluid">
+            <!-- 
+            Decided to pos the logo on the center for better 
+            attention to branding and to add an enlargement effect
+            when screen goes from large to small and when scrolling down
+            TODO: Add enlarge effect when small screen and when user
+            scrolls down
+            -->
+            <!-- MODAL OFF CANVAS BTN visible always, 
+              displayed from left to right
+            -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-start text-bg-danger text-center" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+              <div class="offcanvas-header">
+                <h2 class="display-4" id="offcanvasNavbarLabel">Pizza Pizza</h2>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <!-- 
+                OFFCANVAS MENU
+                TODO: FIX SIZE TO BE RESPONSIVE AND COLOR
+              -->
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-start flex-grow-1 pe-4">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Order now</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" >Reviews</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="" class="nav-link">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="" class="nav-link">More Info</a>
+                  </li>
+                </ul>
+                
+              </div>
+            </div>
+
+            <!-- I want the LOGO image to be centered
+                 all the time -->
+             <img id="pizza-logo" class="mx-auto my-0 img-fluid" src="img/pizza-logo.svg">
+             <a name="location" id="location-finder" class="btn" href="#" role="find store button link"><i class="fa-solid fa-location-dot"></i></a> 
+             <a name="my-order" class="btn btn-warning" href="#" role="view my order">Order now</a>
+            
+            </div>  
+          </nav>
+          
+          <section id="hero-banner">
+            <h1 id="hero-text" class="display-1">Pizza Pizza!</h1>
+            <div id="view-food-menu">
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Our Menu
+              </button>
+            </div>
+            <!-- Modal Food Menu -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content bg-danger">
+                  <div class="modal-header">
+                    <!-- FIXED display and center title -->
+                    <h1 class="display-4 text-center text-light" id="staticBackdropLabel">Pizza Pizza Menu</h1>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero quibusdam quaerat fugiat minima quidem harum a, sit quo, eligendi veniam at magnam saepe expedita explicabo repellat cupiditate. Illo, magnam eveniet.
+                    Perspiciatis, saepe. Nesciunt voluptatibus nemo deleniti reprehenderit eius laudantium nobis! Voluptatum aut consequuntur amet vero hic inventore quod id, autem modi neque facere eius est atque dicta officia quas minima!
+                    Nobis possimus recusandae facilis blanditiis enim quod sequi impedit assumenda voluptatum reprehenderit iste accusantium dignissimos iure animi, alias architecto, tempora eum voluptates? Eligendi, deserunt qui placeat in ad reiciendis magnam?
+                    Exercitationem sapiente ea soluta porro earum a temporibus tempore atque quia distinctio eveniet corporis blanditiis maxime impedit maiores quidem quaerat aut, voluptate, cumque, explicabo iure. Excepturi voluptatibus repellat explicabo a.
+                    Magni nulla provident nemo aperiam itaque consequatur amet ea quo harum, maxime distinctio nisi dolor vero perferendis dignissimos ducimus libero aliquam omnis adipisci cupiditate. Autem, sint dolorem. Facilis, eveniet ab!
+                    Qui, error. Iusto maxime quidem, voluptatem facilis corporis a perspiciatis vel, reprehenderit excepturi, eos non. Sapiente amet atque deleniti modi eos consectetur tempora incidunt illum consequuntur et, cumque, aut error.
+                    Molestias repellendus pariatur magni nostrum necessitatibus, vitae recusandae, cum corporis, distinctio assumenda modi. Earum architecto blanditiis magni mollitia possimus, tempora facere esse neque dolor, deleniti officiis veniam distinctio amet suscipit?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Understood</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </section>
+          
+          <section id="pizza-animation-container" class="hidden">
+            
+            <img src="img/pizza-animation-base.png" alt="" id="animation-template" class="img-fluid">
+            <!--/* 
+              Credits: Yassir Abbas: https://www.pexels.com/es-es/foto/comida-pizza-comida-rapida-delicioso-11111603/
+            -->
+          </section>
+
+          <section id="info-section">
+            <article id="maps-section">
+
+            </article>
+            <article id="reviews-section">
+
+            </article>
+          </section>
+        
+        </main>
+
+        <footer id="footer">
+
+        </footer>
+        <!-- CDN Boostrap for JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <!-- Font Awesome 5 setup -->
+        <script src="https://kit.fontawesome.com/bf50564c9b.js" crossorigin="anonymous"></script>
+    </body>
+</html>
