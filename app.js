@@ -16,5 +16,5 @@ const observer = new IntersectionObserver((entries) => {
 /* Select the elements we want to hide from view until 
 they are on user view
  */
-const hiddenElements = document.querySelectorAll('.hidden');
+const hiddenElements = document.querySelectorAll('.hidden-element');
 hiddenElements.forEach((element) => observer.observe(element));
