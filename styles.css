@@ -101,8 +101,8 @@ body {
 }
 
 #view-food-menu {
-    transform: translate(4vw, 1vh);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    transform: translate(-175%, 50%);
 }
 
 /* additional style for btn-warning */
@@ -137,6 +137,7 @@ body {
     opacity: 0.8;
     border-radius: 10px;
     font-size: 1.5rem;
+    padding: 4px;
 }
 #pizza-animation-container {
     height: 70vh;
@@ -249,14 +250,13 @@ for better readability */
 
 #footer {
     color: #fff;
-    height: 120px;
+    height: fit-content;
     /* FIX this to appear 100vw not that value*/
-    width: 99vw;
     background-color: #dc3545; /*danger color code*/
 }
 #footer a {
     border: none;
-    margin: 0 5px;
+    margin: 5px 5px;
     border-radius: 50%;
 }
 
@@ -268,17 +268,24 @@ for better readability */
 }
 
 @media screen and (max-width: 760px) {
+    #view-food-menu {
+        font-size: 0.8rem;
+        transform: translate(-170%, 150%);
+    }
+
+
     #info-section {
         height: fit-content;
         display: flex;
         flex-direction: column;
+        margin: 0 auto;
     }
     /* Maps, and reviews are stacked vertically and
     span the full width for smaller screens */
 
     #reviews-section, #maps-section {
         margin-top: 20px;
-        width: 100vw;
+        width: 95vw;
 
     }
 
@@ -288,9 +295,9 @@ for better readability */
         width: 82vw;
         margin-bottom: 12px;
     }
-    
     #mapCanvasStores iframe {
         width: 80vw;
+        margin-left: 24px;
     }
 
     .pizza-slogan {
@@ -301,8 +308,8 @@ for better readability */
     #animation-template {
         margin-top: 34px;
         box-sizing: border-box;
-        height: 25rem;
-        max-width: 50rem;
+        height: 20rem;
+        max-width: 20rem;
         animation-name: rotatingPizza;
         animation-duration: 10s;
         animation-iteration-count: 2;
