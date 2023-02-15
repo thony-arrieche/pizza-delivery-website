@@ -30,9 +30,9 @@
             <button class="navbar-toggler" id="main-menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
               <i class="fa-solid fa-bars"></i>
             </button>
-            <div class="offcanvas offcanvas-start text-bg-danger text-center" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas offcanvas-start bg-danger text-white text-center" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
               <div class="offcanvas-header">
-                <h2 class="display-4" id="offcanvasNavbarLabel">Pizza Pizza<span id="pizza-lovers">&#127829;</span></h2>
+                <h2 class="display-4 w-100" id="offcanvasNavbarLabel">Pizza Pizza!</h2>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
               </div>
               <!-- 
@@ -42,32 +42,31 @@
               <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-start flex-grow-1">
                   <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" aria-current="page" href="#hero-banner">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Order now</a>
+                    <a class="nav-link" href="#hero-banner">Order now</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#" >Reviews</a>
+                    <a class="nav-link" href="#reviews-section" >Reviews</a>
                   </li>
                   <li class="nav-item">
-                    <a href="" class="nav-link">Contact</a>
+                    <a class="nav-link" href="#footer" >Contact</a>
                   </li>
                   <li class="nav-item">
-                    <a href="" class="nav-link">More Info</a>
+                    <a class="nav-link" href="#">More Info</a>
                   </li>
                 </ul>
-                
               </div>
             </div>
 
             <!-- I want the LOGO image to be centered
                  all the time -->
              <img id="pizza-logo" class="mx-auto my-0 img-fluid" src="img/pizza-logo.svg">
-             <a name="location" id="location-finder" class="btn" href="#" role="find store button link"><i class="fa-solid fa-location-dot"></i></a> 
-             <a name="my-order" class="btn btn-warning order-now-btn" href="#" role="view my order">Order now</a>
-            
-            </div>  
+             <a name="location" id="location-finder" class="btn" href="#info-section" role="find store button link"><i class="fa-solid fa-location-dot"></i></a> 
+             <!-- IF EMPTY it should show the food menu -->
+             <button type="button" name="my-order" class="btn btn-warning order-now-btn" role="view my order" data-bs-target="#staticBackdrop">Order now</button>
+            </div>  <!-- end of nav-list wrapper -->
           </nav>
           
           <section id="hero-banner">
@@ -78,40 +77,77 @@
                 Our Menu
               </button>
             </div>
-            <!-- Modal Food Menu -->
+            <!-- Modal Food Menu displays on the center in 
+              lg screens
+            -->
+            <!-- USE GRID TABLE TO DISPLAY NAME, 
+              INGREDIENTES, PRICE, IMG and ADD TO 
+              ORDER BUTTON
+            -->
+            <!-- Pizza types are divided by rows
+                each row serves 4* cols. Size selector
+                needs to be a fading slider or one on 
+                screen and the rest hidden. Price
+                 should update depending on size 
+                 and type
+              -->
             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                <div class="modal-content bg-danger">
+              <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                <div class="modal-content bg-danger text-bg-danger">
                   <div class="modal-header">
-                    <!-- FIXED display and center title -->
-                    <h1 class="display-4 text-center text-light" id="staticBackdropLabel">Pizza Pizza Menu</h1>
+                    <h1 class="modal-title text-center w-100" id="staticBackdropLabel">Menu</h1>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    <!-- USE GRID TABLE TO DISPLAY NAME, 
-                      INGREDIENTES, PRICE, IMG and ADD TO 
-                      ORDER BUTTON
-                    -->
-                    <ul class="list-group p-2 m-2">
-                      <li class="list-item">
-                        Margarita
-                      </li>
-                      <li class="list-item">
-                        Pepperoni
-                      </li>
-                      <li class="list-item">
-                        Olives
-                      </li>
-                      <li class="list-item">
-                        Sausage
-                      </li>
-                      <li class="list-item">
-                        Pinneaple
-                      </li>
-                    </ul>
+                    <div class="container-fluid">
+                      <div class="row text-center"> <!--row gap?-->
+                        <div class="col-3"></div>
+                        <div class="col-4">Ingredients</div>
+                        <div class="col-3 text-center">Size</div>
+                        <div class="col-2">Price</div>
+                      </div>
+                      <div class="row"> <!--row gap?-->
+                        <div class="col-3">
+                          <img src="img/pizza-box.png" id="pizza-type-menu-img" width="25" alt="margherita pizza">
+                          Margherita
+                        </div>
+                        <div class="col-4">Sauce, cheese, fresh basil</div>
+                        <div class="col-3 text-center">S, M, L</div>
+                        <div class="col-2 text-center">$</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-3">
+                          <img src="img/pizza-box.png" id="pizza-type-menu-img" width="25" class="w-sm-15" alt="pep pizza">
+                          Pepperoni
+                        </div>
+                        <div class="col-4">Sauce, cheese, pepperoni</div>
+                        <div class="col-3 text-center">S, M, L</div>
+                        <div class="col-2 text-center">$$</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-3">
+                          <img src="img/pizza-box.png" id="pizza-type-menu-img" width="25" class="w-sm-15" alt="meat pizza">
+                          Meat
+                        </div>
+                        <div class="col-4">Sauce, cheese, beef and sausage</div>
+                        <div class="col-3 text-center">S, M, L</div>
+                        <div class="col-2 text-center">$$$</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-3">
+                          <img src="img/pizza-box.png" id="pizza-type-menu-img" width="25" class="w-sm-15" alt="veggies pizza">
+                          Veggetarian
+                        </div>
+                        <div class="col-4">Sauce, cheese, onion, spinach, black olives</div>
+                        <div class="col-3 text-center">S, M, L</div>
+                        <div class="col-2 text-center">$$$</div>
+                      </div>
+                      <div class="row"></div>
+                    </div>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+                    
                   </div>
                 </div>
               </div>
@@ -124,13 +160,14 @@
             WITHOUT MESSING AROUND THE LAYOUT
           -->
             <div id="pizza-wrapper" class="hidden-element">
-              <img src="img/pizza-animation-base.png" alt="delicious pizza rotating on a blurry background" id="animation-template" class="img-fluid hidden-element">
+              <img src="img/pizza-animation-base.png" alt="delicious pizza rotating on a img background" id="animation-template" class="img-fluid hidden-element">
             <!--/* 
               Credits: Yassir Abbas: https://www.pexels.com/es-es/foto/comida-pizza-comida-rapida-delicioso-11111603/
             -->
             </div>
-            <h3 class="h1 pizza-slogan bg-dark">Pizza unites in every bite!</h3>
-
+            <div class="col-lg-3 col-xl-4">
+              <h3 class="h1 pizza-slogan bg-dark"> Pizza unites in every bite!</h3>
+            </div>
           </section>
 
           <section id="info-section">
@@ -157,9 +194,9 @@
             <!-- <p>Slider section with controls -->
             <article id="reviews-section" class="p-2 text-center" data-bs-theme="light">
               
-              <h3 class="my-4">Meet our Pizza Lovers</h3>
+              <h3 class="my-4">Meet our Pizza Lovers <i class="fa fa-heart text-danger" aria-hidden="true"></i> </h3>
               <p>What people say</p>
-              <div id="carouselReviewsTextSamples" class="carousel slide">
+              <div id="carouselReviewsPizzaTime" class="carousel slide">
                 <!-- <div class="carousel-indicators">
                   <button type="button" data-bs-target="#carouselReviewsTextSamples" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Review 1"></button>
                   <button type="button" data-bs-target="#carouselReviewsTextSamples" data-bs-slide-to="1" aria-label="Review 2"></button>
@@ -214,11 +251,11 @@
                     </p>
                   </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselReviewsTextSamples" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselReviewsPizzaTime" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselReviewsTextSamples" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselReviewsPizzaTime" data-bs-slide="next">
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Next</span>
                 </button>

@@ -1,7 +1,7 @@
 /* Josefina Sans, font imported from Google */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
 
-/* soft normalize */
+/* browsers soft reset */
 * {
     margin: 0;
     padding: 0;
@@ -11,54 +11,9 @@ body {
     scroll-behavior: smooth;
     font-family: 'Josefin Sans', sans-serif;
 }
-/*copypaste
-#dc3545 danger color code
+/*copypaste #dc3545 danger color code
 */
 
-/*FIX ODD CENTERING ANIMATION*/
-#pizza-logo {
-    height: 4.25rem;
-}
-
-#location-finder {
-    font-size: 2rem;
-    color: #fff;
-    margin: 4px;
-}
-
-#location-finder:hover {
-    color: rgb(179, 177, 177);
-}
-
-/* Additional style for the main menu modal*/
-#offcanvasNavbar {
-    border-radius: 1rem;
-    height: 60vh;
-    width: 38vw;
-    line-height: 3rem;
-    margin: 0.8rem;
-}
-
-#offcanvasNavbar a, .btn-close {
-    color: #fff;
-    font-size: 1.3rem;
-}
-
-#offcanvasNavbar a:hover {
-    background-color: rgb(201, 62, 62);
-}
-
-#offcanvasNavbarLabel {
-    margin-left: 1.6rem;
-}
-/* Pizza icon next to h3 offcanvasNavbarLabel */
-#pizza-lovers {
-    font-size: 34px;
-}
-
-.small-pizza-icon {
-    font-size: 1.5rem;
-}
 /* top-left burger menu */
 #main-menu-btn {
     border-style: none;
@@ -68,28 +23,57 @@ body {
 #main-menu-btn:hover {
     color: #dadada;
 }
+/*top center brand logo*/
+#pizza-logo {
+    height: 4.25rem;
+}
+/* location pin style and hover animation */
+#location-finder {
+    font-size: 1.8rem;
+    color: #fff;
+    margin: 2px;
+}
+#location-finder:hover {
+    color: rgb(204, 203, 203);
+}
+/* More style for the main menu modal*/
+#offcanvasNavbar {
+    border-radius: 0.5rem;
+    height: 60vh;
+    width: 40vw;
+    line-height: 2rem;
+    margin: 1rem;
+}
+/* White text for the sidebar links and hover effect*/
+#offcanvasNavbar a {
+    color: #fff;
+    font-size: 1.3rem;
+}
 
-/* Central img style */
+#offcanvasNavbar a:hover {
+    background-color: rgb(243, 130, 130);
+}
+
+/* Central hero img style and setup */
 #hero-banner {
     min-height: 100vh;
-    /*    background-color: rgb(247, 233, 158);*/
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Use "linear-gradient" to add a brigther background effect to the image (photographer.jpg). This will make the text easier to read */
-    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("hero-image/hero-image-4.jpg");
-    /* Position and center the image to scale nicely on all screens */
+    /* Used "linear-gradient" to add a brigther effect and
+    for better readability */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url("hero-image/hero-image-1.jpg");
+    /* Position and center the image to scale in all sizes */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     /*
-    Credit for photos used
-    1: Foto de Leonardo Luz: https://www.pexels.com/es-es/foto/comida-pizza-mano-sujetando-15126955/
-    2: Foto de David Levinson: https://www.pexels.com/es-es/foto/comida-pizza-restaurante-delicioso-14520442/
-    3: Foto de Pimon Kumsri: https://www.pexels.com/es-es/foto/comida-pizza-delicioso-sabroso-13472737/
-    4: Foto de Evgeniya Davydova: https://www.pexels.com/es-es/foto/comida-pizza-delicioso-sabroso-11710529/
-    5: Foto de David Levinson: https://www.pexels.com/es-es/foto/comida-pizza-restaurante-cocinando-14520444/
+    Credit for photos used, from Pexels
+    1: Pimon Kumsri: https://www.pexels.com/es-es/foto/comida-pizza-delicioso-sabroso-13472737/
+    2: David Levinson: https://www.pexels.com/es-es/foto/comida-pizza-restaurante-delicioso-14520442/
+    3: David Levinson: https://www.pexels.com/es-es/foto/comida-pizza-restaurante-cocinando-14520444/
+    (not used)
     6: Foto de Cats Coming: https://www.pexels.com/es-es/foto/mariscos-pizza-queso-derretido-365459/
     */
 }
@@ -108,13 +92,12 @@ body {
 /* additional style for btn-warning */
 .btn-warning {
     background-color: orange;
-    color: #fff;
     border: transparent;
     font-size: 1.3rem;
 }
 
 .btn-warning:hover {
-    background-color: rgb(221, 144, 2);
+    background-color: rgb(253, 195, 88);
 }
 /* Only for the nav button */
 .order-now-btn {
@@ -132,12 +115,13 @@ body {
 */
 /* wrapper for the image that is going to rotate  */
 .pizza-slogan {
+    box-sizing: border-box;
     color: #fff;
     text-align: center;
     opacity: 0.8;
-    border-radius: 10px;
-    font-size: 1.5rem;
-    padding: 4px;
+    border-radius: 8px;
+    font-size: 1.75rem;
+    padding: 15px;
 }
 #pizza-animation-container {
     height: 70vh;
@@ -159,14 +143,12 @@ body {
     */
 #animation-template, .show-element {
     box-sizing: content-box;
-    height: 28rem;
+    height: 25rem;
     max-width: 50rem;
     animation-name: zoomInPizza, rotatingPizza;
-    animation-duration: 2s, 30s;
+    animation-duration: 500ms, 15s;
     animation-iteration-count: 1, infinite;
     animation-timing-function: ease-in;
-    /* To add a slight pause after the between animations*/
-    animation-delay: 0, 200ms;
     /*animation-play-state: paused;*/
     
     /*
@@ -206,7 +188,7 @@ body {
     height: 70vh;
     display: flex;
     color: #fff;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)), url(hero-image/hero-image-5.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(197, 1, 1, 0.15)), url(hero-image/hero-image-3.jpg);
     background-size:cover;
     background-repeat: no-repeat;
 }
@@ -260,6 +242,7 @@ for better readability */
     border-radius: 50%;
 }
 
+
 /* To prevent animation stacking with Reducen Motion users  */
 @media(prefers-reduced-motion) {
     .hidden {
@@ -268,11 +251,24 @@ for better readability */
 }
 
 @media screen and (max-width: 760px) {
+
+    /* More style for the main menu modal*/
+    #offcanvasNavbar {
+        border-radius: 0.5rem;
+        width: 50vw;
+        line-height: 1.5rem;
+        margin: 0.5rem;
+        }
+
     #view-food-menu {
         font-size: 0.8rem;
         transform: translate(-170%, 150%);
     }
 
+    /*additional style for center food menu modal*/
+    #pizza-type-menu-img {
+        display: none;
+    }
 
     #info-section {
         height: fit-content;
@@ -300,9 +296,19 @@ for better readability */
         margin-left: 24px;
     }
 
+    /* animation text companion gets smaller and positions
+        under it
+    */
     .pizza-slogan {
-        display: none;
-        box-sizing: content-box;
+        box-sizing: border-box;
+        color: #fff;
+        opacity: 0.8;
+        border-radius: 8px;
+        font-size: 1.25rem;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        align-self: center;
     }
 
     #animation-template {
